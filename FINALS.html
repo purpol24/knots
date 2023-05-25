@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="finals.css">
+  <title>KNOTS</title>
+  <script src="finals.js"></script>
+</head>
+
+<body>
+  <header>
+
+  </header>
+  <main>
+    <div class="product CREAM">
+      <img src="cream.png" width="226" height="370" alt="cream">
+      <h3>CREAM</h3>
+      <p>Description of Product 1.</p>
+      <p>Price: 350 PESOS</p>
+      <button class="btn" onclick="addToCart('CREAM', 350)">Add to Cart</button>
+    </div>
+    <div class="product BLACK">
+      <img src="black.jpg" width="226" height="370" alt="black">
+      <h3>BLACK</h3>
+      <p>Description of Product 2.</p>
+      <p>Price: 350 PESOS</p>
+      <button class="btn4" onclick="addToCart('BLACK', 350)">Add to Cart</button>
+    </div>
+    <div class="product MATCHA">
+      <img src="matcha.jpg" width="226" height="370" alt="MATCHA">
+      <h3>MATCHA</h3>
+      <p>Description of Product 3.</p>
+      <p>Price: 350 PESOS</p>
+      <button class="btn" onclick="addToCart('MATCHA', 350)">Add to Cart</button>
+    </div>
+    <div id="cart"></div>
+    <button class="btn1" onclick="displayCart()"><img src="cart.png" width="50" height="50"/></button>
+  </main>
+  <button class="btn3" onclick="checkout()">CHECKOUT</button>
+  <script>
+    var cartItems = [];
+    var totalPrice = 0;
+
+    function addToCart(product, price) {
+      cartItems.push(product);
+      totalPrice += price;
+      alert(product + " is added to cart!");
+    }
+
+    function displayCart() {
+      var cartElement = document.getElementById("cart");
+      cartElement.innerHTML = "";
+      for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        var itemElement = document.createElement("p");
+        itemElement.textContent = item;
+        cartElement.appendChild(itemElement);
+      }
+    }
+
+    function checkout() {
+      alert("Thanks for purchasing! Total Price: " + "₱" + totalPrice );
+    }
+
+
+    function displayCart() {
+      alert("Products in cart: " + cartItems.join(", "));
+    }
+
+  </script>
+ 
+  
+
+  <footer>
+    <p> <b> <font face = "tahoma">  <center> 
+    
+        <hr>
+        <table>
+  
+          <th>
+            <li>ABOUT</li>
+            <li>Leather Texture: Smooth</li>
+            <li>Material: Cottohn Twill</li>
+          </th>
+  
+          <th>
+            <li>SERVICES</li>
+            <li>Email: whyknotsapparel@gmail.com</li>
+            <li>63+ 9998432111</li>
+          </th>
+  
+        </table>
+  
+      
+  
+      
+  
+      <h2>
+        <font face="Tahoma"> Follow Us!</font>
+      </h2>
+ 
+        <a href="https://www.facebook.com/profile.php?id=100082999189529" target="blank">
+          <img src="fb.png" width=" 50" height="50"></a>
+  
+  
+  
+        <a href="https://www.instagram.com/knots.apparel/" target="_blank">
+          <img src="ig.png" width="50" height="50"></a>
+  
+  
+  
+        <a href="https://shopee.ph/knotsapparel" target="_blank">
+          <img src="shopeereal.png" width="50" height="50"></a>
+  
+  
+        <p class="copyright">KNOTS &#169; 2022</p></center> </font></b></p>
+  </footer>
+  </body>
+  </html>
